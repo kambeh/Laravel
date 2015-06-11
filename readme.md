@@ -30,17 +30,37 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
   - \database\migrations\2015_06_10_104406_create_cinemas_table.php
   - \database\migrations\2015_06_10_104506_create_movies_table.php
   - \database\migrations\2015_06_10_104606_create_sessiontimes_table.php
-
+	
 ### Added database table seeders
   - \My_laravel\database\seeds\CinemasTableSeeder.php
   - \My_laravel\database\seeds\MoviesTableSeeder.php
   - \My_laravel\database\seeds\SessiontimesTableSeeder.php
-
-### Modified DatabaseSeeder.php to includes database files for cinema guide application
-  - \My_laravel\database\seeds\DatabaseSeeder.php
-
+  
 ### Create database table and loading data using artisan CLI commands
   * php artisan migrate
   * composer dump-autoload
-  * php artisan db:seed
-
+  * php artisan db:seed 
+	
+### Modified skeleton code to suit the cinema guide application
+* Modified code
+  - .env.ENV
+  - \My_laravel\database\seeds\DatabaseSeeder.php
+  
+* Added views
+  - \resources\views\cinemas.blade
+  - \resources\views\movie.blade
+  - \resources\views\sessiontimes.blade
+  
+* Added controllers
+  - \app\Http\Controllers\CinemaController.php
+  - \app\Http\Controllers\MovieController.php
+  
+* Added models
+  - \app\Cinemas.php
+  - \app\Movies.php
+  - \app\Sessiontimes.php
+  
+* Modified code
+  - \My_laravel\database\seeds\DatabaseSeeder.php
+  - \app\Http\Controllers\HomeController.php
+  - \app\Http\routes.php

@@ -12,5 +12,10 @@ class Cinemas extends Model {
     // public function cinemas()
     // {
         // //return $this->hasManyThrough('App\movies', 'App\sessiontimes');
-    // }	
+    // }
+	
+	public function get_records_byId($id)
+    {
+        return Cinemas::find($id);
+    }	
 }

@@ -14,19 +14,23 @@
 Route::get('/', 'HomeController@index');
 
 Route::get('home', 'HomeController@index');
-Route::get('movie', 'MovieController@index');
+Route::get('movies', 'moviesController@index');
+Route::get('movies/{name}', 'moviesController@searchbymovie');
 
-Route::get('cinema', 'CinemaController@index');
-Route::get('cinema/movies', 'CinemaController@movies');
-Route::get('cinema/movies/sessions', 'CinemaController@sessions');
+Route::get('cinemas', 'CinemasController@index');
+//Route::get('cinemas/{name}', 'CinemasController@searchbycinema');
+Route::get('cinemas/movies', 'CinemasController@movies');
+Route::get('cinemas/movies/sessions', 'CinemasController@sessions');
 
-Route::get('cinema/sessions', 'CinemaController@sessions');
+Route::get('cinemas/sessions', 'CinemasController@sessions');
+Route::get('cinemas/search', 'CinemasController@search');
+Route::get('cinemas/searchresult', 'CinemasController@searchresult');
 
-Route::resource('movie', 'movieController',
-                ['only' => ['index']]);
+Route::resource('movies', 'moviesController',
+                ['only' => ['index', 'searchresult']]);
 				
-Route::resource('cinema', 'cinemaController',
-				['only' => ['index', 'movies', 'sessions']]);
+Route::resource('cinemas', 'cinemasController',
+				['only' => ['index', 'movies', 'sessions', 'search', 'searchresult', 'searchbycinema']]);
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

@@ -2,9 +2,9 @@
 use App\Movies;
 use App\Http\Request;
 use App\Http\Controllers\Controller;
-use Redirect, Input, Auth;
+use Redirect, Input, Auth, DB;
 
-class MovieController extends Controller {
+class MoviesController extends Controller {
 
 	/*
 	|--------------------------------------------------------------------------
@@ -37,5 +37,25 @@ class MovieController extends Controller {
 		return view('Movie')->withPages(Movies::all());
 	}
 
+	public function searchbymovie($name) {
+		$results = DB::select('select * from movies where title like ?', [$name]);
+		$record = array_pop($results);
+		$data['searchcnt'] = count($record);
 
+		if(!empty($record))
+		{
+			$data['searchResult'] = array('name' => $record->id, 'address' => $record->title);			
+		}
+		else {
+			$records = array();
+			$records['name'] = '';
+			$records['address'] = '';
+			
+			$data['searchResult'] = $records;			
+		}
+
+		return view('searchresult', $data);
+	}
+	
+	
 }
