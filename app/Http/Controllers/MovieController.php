@@ -1,12 +1,14 @@
 <?php namespace App\Http\Controllers;
+use App\Movies;
 use App\Http\Request;
+use App\Http\Controllers\Controller;
 use Redirect, Input, Auth;
 
-class HomeController extends Controller {
+class MovieController extends Controller {
 
 	/*
 	|--------------------------------------------------------------------------
-	| Home Controller
+	| Movie Controller
 	|--------------------------------------------------------------------------
 	|
 	| This controller renders your application's "dashboard" for users that
@@ -22,20 +24,18 @@ class HomeController extends Controller {
 	 */
 	public function __construct()
 	{
-		$this->middleware('auth');
+
 	}
 
 	/**
-	 * Show the application dashboard to the user.
+	 * Show the application index page.
 	 *
-	 * @return Response
+	 * @return Response view page
 	 */
 	public function index()
 	{
-		//return view('home');
-		
-		//re-direct to cinemas after logged on
-		return Redirect::to('cinema');
+		return view('Movie')->withPages(Movies::all());
 	}
+
 
 }
