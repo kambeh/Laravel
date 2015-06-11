@@ -30,12 +30,12 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
   - \database\migrations\2015_06_10_104406_create_cinemas_table.php
   - \database\migrations\2015_06_10_104506_create_movies_table.php
   - \database\migrations\2015_06_10_104606_create_sessiontimes_table.php
-	
+
 ### Added database table seeders
   - \My_laravel\database\seeds\CinemasTableSeeder.php
   - \My_laravel\database\seeds\MoviesTableSeeder.php
   - \My_laravel\database\seeds\SessiontimesTableSeeder.php
-  
+
 ### Modified DatabaseSeeder.php to includes database files for cinema guide application
   - \My_laravel\database\seeds\DatabaseSeeder.php
 
