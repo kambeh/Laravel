@@ -64,3 +64,5 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
   - \My_laravel\database\seeds\DatabaseSeeder.php
   - \app\Http\Controllers\HomeController.php
   - \app\Http\routes.php
+ 
+## Please note that. This project is for my learning during early day in my development career. As the latest PHP version has released, many packages may contain vulnerable code in this version. If you are using this code, please updates all the packages with the latest updates. 
